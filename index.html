@@ -6,37 +6,52 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Language Translator</h2>
+  <div class="container">
+    <h2>Language Translator</h2>
 
-  <div class="box">
-    <textarea class="from-text" placeholder="Type text here"></textarea>
+    <div class="box">
+      <label for="from-text">Input text</label>
+      <textarea id="from-text" class="from-text" placeholder="Type or paste text here"></textarea>
 
-    <div class="controls">
-      <select class="from-lang">
-        <option value="en">English</option>
-        <option value="hi">Hindi</option>
-        <option value="ur">Urdu</option>
-        <option value="fr">French</option>
-        <option value="es">Spanish</option>
-        <!-- aur bhi languages add kar sakte ho -->
-      </select>
+      <div class="controls">
+        <div class="select-group">
+          <span>From:</span>
+          <select class="from-lang">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="ur">Urdu</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+          </select>
+        </div>
 
-      <button class="swap">⇄</button>
+        <button class="swap" title="Swap languages">⇄</button>
 
-      <select class="to-lang">
-        <option value="hi">Hindi</option>
-        <option value="en">English</option>
-        <option value="ur">Urdu</option>
-        <option value="fr">French</option>
-        <option value="es">Spanish</option>
-      </select>
+        <div class="select-group">
+          <span>To:</span>
+          <select class="to-lang">
+            <option value="hi">Hindi</option>
+            <option value="en">English</option>
+            <option value="ur">Urdu</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="translate-btn">Translate</button>
+
+      <label for="to-text">Translation</label>
+      <textarea id="to-text" class="to-text" placeholder="Translation will appear here" readonly></textarea>
     </div>
 
-    <button class="translate-btn">Translate</button>
-
-    <textarea class="to-text" placeholder="Translation" readonly></textarea>
+    <p class="note">
+      This tool uses AI to translate long text directly in your browser.
+    </p>
   </div>
 
+  <!-- Puter.js (LLM translation, no API key required) -->
+  <script src="https://js.puter.com/v2/"></script>
   <script src="script.js"></script>
 </body>
 </html>
